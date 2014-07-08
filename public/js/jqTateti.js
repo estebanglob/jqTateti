@@ -1,4 +1,57 @@
+var app = {};
+
+app.model = {
+  playerSymbol: 'X',
+  machineSymbol: 'O',
+  picPlayerSelector: '[src="img/manosanta.jpg"]',
+  picMachineSelector: '[src="img/tato_bores.jpg"]',
+  celds: {
+    1: '', 2: '', 3: '',
+    4: '', 5: '', 6: '',
+    7: '', 8: '', 9: ''
+  }
+};
+
+app.actions = {
+  playerClickHandler: function() {
+    app.actions.markPlayerCeld($this);
+  },
+
+  handlePlayerClick: function() {
+    $('.celd').on('click', app.actions.playerClickHandler);
+  },
+
+  checkEmptyCelds: function() {
+    var empty = 0;
+    for (var i in app.model.celds) {
+      if (app.model.celds[i] === '') {
+        empty++;
+      }
+    }
+
+    return empty;
+  },
+  
+  checkWin: function() {},
+  checkPlayerkWin: function() {},
+  checkMachinekWin: function() {},
+  checkDraw: function() {},
+  requestNextMachineCeld: function() {},
+  showMachineModal: function() {},
+  stopHandlingPlayerClick: function() {},
+  markPlayerCeld: function($celd) {
+    var celdNumber = $celd.attr('class').split(' ')[1].replace('celd', '');
+    app.model.celds[ celdNumber ] = app.model.playerSymbol;
+    $celd.css('z-index', '-1');
+    $('.pic' + celdNumber + app.model.picPlayerSelector).addClass('right');
+    // emit event 'playerCeldMarked'
+  },
+  markMachineCeld: function() {}
+};
+
+
 $(document).ready(function() {
+  app.actions.handlePlayerClick();
   var picPlayerSelector = '[src="img/manosanta.jpg"]';
   var picMachineSelector = '[src="img/tato_bores.jpg"]';
 
@@ -22,6 +75,7 @@ $(document).ready(function() {
     [1, 5, 9], [3, 5, 7]
   ];
 
+
   var emptyCelds = function() {
     var empty = 0;
     for (var i in model) {
@@ -35,9 +89,6 @@ $(document).ready(function() {
 
   var checkWin = function(player) {
     var symbol = player ? playerSymbol : machineSymbol;
-
-    console.info("checkWin - symbol", symbol);
-
     var win = false;
 
     for (var i = 0, l = winCombinations.length; i < l; i++) {
@@ -63,6 +114,7 @@ $(document).ready(function() {
     return checkWin(false);
   };
 
+
   var markPlayerCeld = function($celd) {
     var celdNumber = $celd.attr('class').split(' ')[1].replace('celd', '');
     model[ celdNumber ] = playerSymbol;
@@ -78,7 +130,11 @@ $(document).ready(function() {
     $img.addClass('right');
   };
 
-  $('.celd').on('click', function() {
+
+
+  /* Events bindings */
+  /*$('.celd').on('click', function() {
+
     markPlayerCeld($(this));
 
     if (checkPlayerWin()) {
@@ -117,5 +173,5 @@ $(document).ready(function() {
         );
       }, 1000);
     }
-  });
+  });*/
 });
