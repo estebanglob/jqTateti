@@ -1,0 +1,108 @@
+.board {
+  height: 306px;
+  margin: 20px;
+  position: absolute;
+  width: 408px;
+}
+
+.row {
+  height: 102px;
+  position: absolute;
+  width: 408px;
+}
+
+.row:nth-of-type(0n+1) {
+  top: 0;
+}
+
+.row:nth-of-type(0n+2) {
+  top: 101px;
+}
+
+.row:nth-of-type(0n+3) {
+  top: 202px;
+}
+
+.picture,
+.celd {
+  height: 100px;
+  position: absolute;
+  top: 0;
+  width: 100px;
+}
+
+.celd {
+  border: 1px solid #000;
+  background-color: #ddd;
+  z-index: 0;
+}
+
+.picture {
+  border: 1px solid #777;
+  transition: left .3s;
+  z-index: -2;
+}
+
+.celd1,
+.celd4,
+.celd7 {
+  left: 0;
+}
+
+.celd2,
+.celd5,
+.celd8 {
+  left: 101px;
+}
+
+.celd3,
+.celd6,
+.celd9 {
+  left: 202px;
+}
+
+.pic1,
+.pic4,
+.pic7 {
+  left: 101px;
+}
+
+.pic2,
+.pic5,
+.pic8 {
+  left: 202px;
+}
+
+.pic3,
+.pic6,
+.pic9 {
+  left: 303px;
+}
+
+.picture.right {
+  z-index: 0;
+}
+
+.pic1.right,
+.pic4.right,
+.pic7.right {
+  left: 0;
+}
+
+.pic2.right,
+.pic5.right,
+.pic8.right {
+  left: 101px;
+}
+
+.pic3.right,
+.pic6.right,
+.pic9.right {
+  left: 202px;
+}
+
+.celd_empty {
+  background-color: #FFF;
+  border: 1px solid #FFF;
+  left: 304px;
+}
