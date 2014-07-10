@@ -1,4 +1,30 @@
 $(document).ready(function() {
+  /*
+  set the board position
+  document.body.offsetWidth
+  */
+  var bodyWidth = document.body.offsetWidth;
+  var boardLeft = (bodyWidth - 408) / 2;
+  $('.board').css('left', boardLeft + 'px');
+
+  var modalStart = $('#modal-dialog-start');
+  var modalStartLeft = (bodyWidth - modalStart.width()) / 2;
+  $('#modal-dialog-start').css('left', modalStartLeft + 'px');
+
+  /*
+  Set the modal dialog
+  */
+
+  modalStart.jqm({
+    modal: true
+  });
+  modalStart.jqmShow();
+  // modal.jqmShow();
+  $('.start-button').on('click', function() {
+    modalStart.jqmHide();
+  });
+
+
   var picPlayerSelector = '[src="img/manosanta.jpg"]';
   var picMachineSelector = '[src="img/tato_bores.jpg"]';
 

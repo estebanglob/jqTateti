@@ -1,6 +1,13 @@
+.page {
+
+  background-color: #C1A8A6;
+  height: 700px;
+  width: 100%;
+}
+
 .board {
   height: 306px;
-  margin: 20px;
+  margin-top: 30px;
   position: absolute;
   width: 408px;
 }
@@ -102,7 +109,47 @@
 }
 
 .celd_empty {
-  background-color: #FFF;
-  border: 1px solid #FFF;
+  background-color: #C1A8A6;
+  border: 1px solid #C1A8A6;
   left: 304px;
+}
+
+
+.modal-dialog {
+  display: none;
+}
+
+#modal-dialog-start {
+  background-color: #C1A8A6 ;
+  border-radius: 5px;
+  display: none;
+  height: 250px;
+  margin: 0;
+  width: 60%;
+}
+
+#modal-dialog-start .start-button {
+  background-color: #F94940;
+  border-radius: 3px;
+  color: #560A06;
+  cursor: pointer;
+  font-weight: bold;
+  height: auto;
+  padding: 10px;
+  text-align: center;
+  width: 150px;
+}
+
+#modal-dialog-start .start-button:hover {
+  background-color: #560A06;
+  color: #F94940;
+}
+
+#modal-dialog-start .image {
+  text-align: center;
+}
+
+#modal-dialog-start img {
+  height: 200px;
+  width: 150px;
 }
