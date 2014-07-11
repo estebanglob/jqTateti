@@ -119,7 +119,8 @@
   display: none;
 }
 
-#modal-dialog-start {
+#modal-dialog-start,
+#modal-dialog-end {
   background-color: #C1A8A6 ;
   border-radius: 5px;
   display: none;
@@ -128,7 +129,7 @@
   width: 60%;
 }
 
-#modal-dialog-start .start-button {
+#modal-dialog-start .close-button {
   background-color: #F94940;
   border-radius: 3px;
   color: #560A06;
@@ -140,16 +141,22 @@
   width: 150px;
 }
 
-#modal-dialog-start .start-button:hover {
+#modal-dialog-start .close-button:hover {
   background-color: #560A06;
   color: #F94940;
 }
 
-#modal-dialog-start .image {
+#modal-dialog-start .image,
+#modal-dialog-end .image {
   text-align: center;
 }
 
 #modal-dialog-start img {
+  height: 200px;
+  width: 150px;
+}
+
+#modal-dialog-end img {
   height: 200px;
   width: 150px;
 }

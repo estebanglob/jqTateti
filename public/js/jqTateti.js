@@ -8,8 +8,10 @@ $(document).ready(function() {
   $('.board').css('left', boardLeft + 'px');
 
   var modalStart = $('#modal-dialog-start');
+  var modalEnd = $('#modal-dialog-end');
   var modalStartLeft = (bodyWidth - modalStart.width()) / 2;
-  $('#modal-dialog-start').css('left', modalStartLeft + 'px');
+  modalStart.css('left', modalStartLeft + 'px');
+  modalEnd.css('left', modalStartLeft + 'px');
 
   /*
   Set the modal dialog
@@ -18,10 +20,21 @@ $(document).ready(function() {
   modalStart.jqm({
     modal: true
   });
+
+  modalEnd.jqm({
+    modal: true
+  });
+
   modalStart.jqmShow();
-  // modal.jqmShow();
-  $('.start-button').on('click', function() {
+
+  $('#modal-dialog-start .close-button').on('click', function() {
+    // comenzarla partida
     modalStart.jqmHide();
+  });
+
+  $('#modal-dialog-end .close-button').on('click', function() {
+    // comenzarla partida
+    modalEnd.jqmHide();
   });
 
 
@@ -108,7 +121,8 @@ $(document).ready(function() {
     markPlayerCeld($(this));
 
     if (checkPlayerWin()) {
-      window.alert('The player has won!');
+      $('.end-of-game-message').text('Ganaste!');
+      modalEnd.jqmShow();
     }
 
     if (emptyCelds() === 0) {
@@ -127,12 +141,14 @@ $(document).ready(function() {
               model[ data.machineCeld ] = machineSymbol;
               markMachineCeld(data.machineCeld);
               if (checkMachineWin()) {
-                window.alert('The machine has won!');
+                $('.end-of-game-message').text('Gané!');
+                modalEnd.jqmShow();
                 return;
               }
 
               if (emptyCelds() === 0) {
-                window.alert('Draw!');
+                $('.end-of-game-message').text('Empate.');
+                modalEnd.jqmShow();
                 return;
               }
             },
