@@ -11,7 +11,7 @@
   <script src="js/jqTateti.js"></script>
 </head>
 <body>
-  <div id="modal-dialog-start" class="jqmWindow">
+  <div id="modal-dialog-start" class="jqmWindow modal-dialog">
     <p class="close-button">
       ¿Empezamos?
     </p>
@@ -21,10 +21,22 @@
     </p>
   </div><!-- end #modal-dialog-start -->
 
-  <div id="modal-dialog-end" class="jqmWindow">
+  <div id="modal-dialog-thinking" class="jqmWindow modal-dialog">
+    <p class="thinking-message"></p>
+    <br />
+    <p class="image">
+      <img src="img/tato_empezar.jpg" />
+    </p>
+  </div><!-- end #modal-dialog-thinking -->
+
+  <div id="modal-dialog-end" class="jqmWindow modal-dialog">
     <p class="end-of-game-message"></p>
     <p class="close-button">
       ¿Empezamos otro?
+    </p>
+    <br />
+    <p class="share-google-plus-button">
+      Compartir en Google+
     </p>
     <br />
     <p class="image">
