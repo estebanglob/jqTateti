@@ -1,5 +1,20 @@
 $(document).ready(function() {
   /*
+  Función para limpiar el board
+  */
+  var clean = function() {
+    model = {
+      1: '', 2: '', 3: '',
+      4: '', 5: '', 6: '',
+      7: '', 8: '', 9: ''
+    };
+
+    $('.picture').removeClass('right');
+    $('.celd').css('z-index', 0);
+  };
+
+
+  /*
   set the board position
   document.body.offsetWidth
   */
@@ -34,6 +49,7 @@ $(document).ready(function() {
 
   $('#modal-dialog-end .close-button').on('click', function() {
     // comenzarla partida
+    clean();
     modalEnd.jqmHide();
   });
 
@@ -74,8 +90,6 @@ $(document).ready(function() {
 
   var checkWin = function(player) {
     var symbol = player ? playerSymbol : machineSymbol;
-
-    console.info("checkWin - symbol", symbol);
 
     var win = false;
 
@@ -123,10 +137,12 @@ $(document).ready(function() {
     if (checkPlayerWin()) {
       $('.end-of-game-message').text('Ganaste!');
       modalEnd.jqmShow();
+      return;
     }
 
     if (emptyCelds() === 0) {
-      window.alert('Draw!');
+      $('.end-of-game-message').text('Empate!');
+      modalEnd.jqmShow();
       return;
     }
     else {

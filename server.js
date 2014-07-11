@@ -10,7 +10,6 @@ app.get('/jqTateti', function(request, response) {
 });
 
 app.post('/ajax', function(request, response) {
-  console.info('AJAX request received - request.body:', request.body);
   var celd = machineGame(request.body);
   response.send({  "machineCeld": celd  });
 });
