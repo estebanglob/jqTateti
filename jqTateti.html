@@ -35,9 +35,16 @@
       ¿Empezamos otro?
     </p>
     <br />
-    <p class="share-google-plus-button">
-      Compartir en Google+
-    </p>
+    <div class="g-plus" data-action="share" data-annotation="bubble"></div>
+
+    <!-- Place this tag after the last share tag. -->
+    <script type="text/javascript">
+      (function() {
+        var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+        po.src = 'https://apis.google.com/js/platform.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+      })();
+    </script>
     <br />
     <p class="image">
       <img src="img/tato_empezar.jpg" />

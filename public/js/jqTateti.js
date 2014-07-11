@@ -63,7 +63,11 @@ $(document).ready(function() {
     $('.board').css('left', boardLeft + 'px');
 
     var modalStartLeft = (bodyWidth - modalStart.width()) / 2;
-    $('.modal-dialog').css('left', modalStartLeft + 'px').jqm({
+    // $('.modal-dialog').css('left', modalStartLeft + 'px').jqm({
+    //   modal: true
+    // });
+
+    $('.modal-dialog').css('left', '25px').jqm({
       modal: true
     });
 
@@ -219,68 +223,3 @@ $(document).ready(function() {
     }
   });
 });
-
-
-
-  /*
-  set the board position
-  document.body.offsetWidth
-  */
-  /*var bodyWidth = document.body.offsetWidth;
-  var boardLeft = (bodyWidth - 408) / 2;
-  $('.board').css('left', boardLeft + 'px');
-
-  var modalStart = $('#modal-dialog-start');
-  var modalEnd = $('#modal-dialog-end');
-  var modalStartLeft = (bodyWidth - modalStart.width()) / 2;
-  modalStart.css('left', modalStartLeft + 'px');
-  modalEnd.css('left', modalStartLeft + 'px');*/
-
-  /*
-  Set the modal dialog
-  */
-
-  /*modalStart.jqm({
-    modal: true
-  });
-
-  modalEnd.jqm({
-    modal: true
-  });*/
-
-  // modalStart.jqmShow();
-
-  /*$('#modal-dialog-start .close-button').on('click', function() {
-    // comenzarla partida
-    modalStart.jqmHide();
-  });*/
-
-  // $('#modal-dialog-end .close-button').on('click', function() {
-  //   // limpiar el board
-  //   clean();
-  //   modalEnd.jqmHide();
-  // });
-
-
-  // var picPlayerSelector = '[src="img/manosanta.jpg"]';
-  // var picMachineSelector = '[src="img/tato_bores.jpg"]';
-
-  // var model = {
-  //   1: '', 2: '', 3: '',
-  //   4: '', 5: '', 6: '',
-  //   7: '', 8: '', 9: ''
-  // };
-
-  // var playerSymbol = 'X',
-  //     machineSymbol = 'O';
-
-  // var winCombinations = [
-  //   // horizontals
-  //   [1, 2, 3], [4, 5, 6], [7, 8, 9],
-
-  //   // verticals
-  //   [1, 4, 7], [2, 5, 8], [3, 6, 9],
-
-  //   // diagonals
-  //   [1, 5, 9], [3, 5, 7]
-  // ];

@@ -121,8 +121,7 @@
   display: none;
   height: auto;
   margin: 0;
-  opacity: 0.9;
-  width: 60%;
+  width: 300px;
 }
 
 .modal-dialog .close-button,
