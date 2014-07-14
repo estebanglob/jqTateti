@@ -5,7 +5,7 @@ Juego de Ta Te Ti usando jQuery.
 
 Para instalar las dependencias, ejecutrar
 
-npm start
+npm install
 
 Para correr el servidor, ejecutar, en el directorio root,
 
